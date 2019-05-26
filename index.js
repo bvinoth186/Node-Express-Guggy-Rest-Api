@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true })); 
 
 app.listen(port, () =>  {
+	console.log(process.env.apikey);
 	console.log(`App listening on port ${port}!`)
 });
 
