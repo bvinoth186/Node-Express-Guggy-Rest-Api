@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 8080; 
 
-const config = require('./config.json');
+require('dotenv').config();
 
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
@@ -25,7 +25,7 @@ app.post('/guggy', (req, res) => {
 	let sentence = req.body.text; 
 	
 	request.post({
-		'headers': { 'content-type': 'application/json', 'apiKey' : config.apikey },
+		'headers': { 'content-type': 'application/json', 'apiKey' : process.env.apikey },
 		'url' : 'http://text2gif.guggy.com/v2/guggify', 
 		'body': JSON.stringify({
 			'sentence':  sentence,
