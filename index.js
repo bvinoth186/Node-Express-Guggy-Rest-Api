@@ -9,8 +9,7 @@ require('dotenv').config();
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({ extended: true })); 
 
-app.listen(port, () =>  {
-	console.log(process.env.apikey);
+app.listen(process.env.PORT || port, () =>  {
 	console.log(`App listening on port ${port}!`)
 });
 
