@@ -35,6 +35,7 @@ app.post('/guggyToSlack', (req, res) => {
 		if(error) {
 			res.send(error)
 		}
+                console.log(body);
 		var jsonContent = JSON.parse(body);
 		
 		console.log('Response Code from guggy for sentence "' + sentence + '" is ' + response.statusCode);
